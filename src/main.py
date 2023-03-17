@@ -15,4 +15,5 @@ ui.div(
 ui.add_component(UIComponent(data=None, tag="hr"))
 ui.button("click me", onClick="alert(1)")
 
+ui.build()
 ui.run()

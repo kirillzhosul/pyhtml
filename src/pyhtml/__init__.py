@@ -48,7 +48,6 @@ class UIComponent:
                     )
                 rendered_body.append(component.render())
 
-        print(rendered_body)
         properties = _render_properties(self.properties) if self.properties else ""
         return f"<{self.tag} {properties}>{''.join(rendered_body)}</{self.tag}>"
 
@@ -122,3 +121,7 @@ class UIApp:
         app = FastAPI()
         app.add_api_route("/", self._route_handler)
         uvicorn.run(app)
+
+    def build(self):
+        with open("./index.html", mode="w") as f:
+            f.write(self._generate_html_content())
