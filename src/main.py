@@ -1,3 +1,6 @@
+"""
+Example of using PyHTML.
+"""
 from pyhtml import UIComponent, UIApp
 
 ui = UIApp()
@@ -15,5 +18,6 @@ ui.div(
 ui.add_component(UIComponent(data=None, tag="hr"))
 ui.button("click me", onClick="alert(1)")
 
-ui.build()
-ui.run()
+if __name__ == "__main__":
+    ui.build()
+    ui.run()
